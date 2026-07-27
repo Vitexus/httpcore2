@@ -1,0 +1,17 @@
+#! /usr/bin/make -f
+
+export PYBUILD_NAME=httpcore2
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_install:
+	find .pybuild -type f -name .coverage -delete
+	dh_auto_install
+
+# Unlike httpcore's own sdist, the httpcore2 2.9.1 sdist published to PyPI
+# does not ship a tests/ directory at all (pyproject.toml's hatch sdist
+# include list claims otherwise, but the artifact itself has none) — there
+# is nothing to run, not a maintainer choice to skip.
+override_dh_auto_test:
+	@echo "No tests/ directory in the httpcore2 2.9.1 sdist -- nothing to run"

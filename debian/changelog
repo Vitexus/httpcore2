@@ -1,0 +1,15 @@
+httpcore2 (2.9.1-1~vitex1) unstable; urgency=medium
+
+  * New source package: httpcore2, Pydantic's actively-developed "v2"
+    rewrite of httpcore (installs its own top-level httpcore2 module,
+    separate from python3-httpcore). Packaged to satisfy httpx2's
+    dependency, needed by mcp 2.0.0b2 for the mcprack fastmcp 4.0.0a2
+    migration.
+  * debian/control: rename source/binary package, drop mitmproxy-era
+    b-d already absent upstream, depend on python3-h11 (>= 0.16) and
+    python3-truststore (>= 0.10) to match this release's actual
+    requirements.
+  * Based on the packaging of python3-httpcore 1.0.7-1 (Sandro Tosi,
+    Debian Python Team), adapted for the separate httpcore2 source.
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Mon, 27 Jul 2026 17:20:00 +0200

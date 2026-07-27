@@ -1,0 +1,47 @@
+Source: httpcore2
+Section: python
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               pybuild-plugin-pyproject,
+               python3-all,
+               python3-anyio <!nocheck>,
+               python3-h2 <!nocheck>,
+               python3-hatch-fancy-pypi-readme,
+               python3-hatchling,
+               python3-hpack <!nocheck>,
+               python3-hyperframe <!nocheck>,
+               python3-pytest <!nocheck>,
+               python3-pytest-asyncio <!nocheck>,
+               python3-pytest-cov <!nocheck>,
+               python3-pytest-httpbin <!nocheck>,
+               python3-sniffio <!nocheck>,
+               python3-socksio <!nocheck>,
+               python3-trio <!nocheck>,
+               python3-trustme <!nocheck>,
+               python3-truststore <!nocheck>,
+               python3-uvicorn <!nocheck>,
+Standards-Version: 4.6.2.0
+Homepage: https://github.com/pydantic/httpx2
+Vcs-Git: https://github.com/Vitexus/httpcore2.git
+Vcs-Browser: https://github.com/Vitexus/httpcore2
+Rules-Requires-Root: no
+
+Package: python3-httpcore2
+Architecture: all
+Depends: python3-h11 (>= 0.16),
+         python3-truststore (>= 0.10),
+         ${misc:Depends},
+         ${python3:Depends},
+Recommends: ${python3:Recommends},
+Suggests: ${python3:Suggests},
+Description: minimal low-level HTTP client (v2 line, installs as httpcore2)
+ httpcore2 is Pydantic's actively-developed next-generation rewrite of
+ httpcore, published under the httpx2/httpcore2 project (the "v2" line
+ of the httpx/httpcore ecosystem). It installs its own top-level
+ "httpcore2" Python module, side by side with the unrelated, still
+ separately maintained python3-httpcore ("v1" httpcore) package.
+ .
+ Packaged to satisfy mcp (>= 2.0.0b2)'s dependency on httpx2, itself
+ needed for the fastmcp 4.0.0a2 migration.
