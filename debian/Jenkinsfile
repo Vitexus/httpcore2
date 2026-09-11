@@ -10,9 +10,7 @@
 String[] distributions = [
 			// 'debian:bookworm', // Disabled: dh_auto_build failure, not yet retried.
 			'debian:trixie',
-			// 'debian:forky', // Disabled: Forky is still unstable/research-only.
-			//                 // The full Debian package ecosystem is not yet available for Forky.
-			//                 // Re-enable once the stack builds cleanly for Forky.
+			'debian:forky',
 			// 'ubuntu:jammy', // Disabled: dh_auto_build failure, not yet retried.
 			// 'ubuntu:noble', // Disabled: transient 403 fetching python3-idna during repo republish, not yet retried.
 			// 'ubuntu:resolute', // Disabled: transient 404 fetching python3-idna during repo republish, not yet retried.
